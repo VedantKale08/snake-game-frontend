@@ -1,3 +1,5 @@
+import { SEGMENT_SIZE } from "../draw/draw";
+
 const createSnakeMovement = (gridSize = 5) => ({
   moveRight: (snakeBody) => {
     const bodyCopy = [...snakeBody];
@@ -34,25 +36,25 @@ export const willSnakeHitTheFood = ({
     case "UP":
       return (
         foodPosition.x === snakeHeadPosition.x &&
-        snakeHeadPosition.y - 5 === foodPosition.y
+        snakeHeadPosition.y - SEGMENT_SIZE === foodPosition.y
       );
       break;
     case "DOWN":
         return (
           foodPosition.x === snakeHeadPosition.x &&
-          snakeHeadPosition.y + 5 === foodPosition.y
+          snakeHeadPosition.y + SEGMENT_SIZE === foodPosition.y
         );
       break;
     case "LEFT":
         return (
           foodPosition.y === snakeHeadPosition.y &&
-          snakeHeadPosition.x - 5 === foodPosition.x
+          snakeHeadPosition.x - SEGMENT_SIZE === foodPosition.x
         );
       break;
     case "RIGHT":
         return (
           foodPosition.y === snakeHeadPosition.y &&
-          snakeHeadPosition.x + 5 === foodPosition.x
+          snakeHeadPosition.x + SEGMENT_SIZE === foodPosition.x
         );
       break;
   }

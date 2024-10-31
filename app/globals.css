@@ -19,3 +19,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.game-font {
+  font-family: var(--font-press_start_2p);
+}

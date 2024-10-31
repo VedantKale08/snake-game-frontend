@@ -24,8 +24,9 @@ function Game() {
     <div
       tabIndex={0}
       onKeyDown={onKeyDownHandler}
-      className="w-full flex items-center outline-none flex-col"
+      className="w-full flex items-center outline-none flex-col gap-6 mt-6"
     >
+      <p className="game-font text-xl">Single Player</p>
       <Canvas ref={canvasRef} draw={drawGame} />
       {gameState === "GAME OVER" ? (
         <button
@@ -38,6 +39,7 @@ function Game() {
         </button>
       ) : (
         <button
+          className="bg-[#2C7865] px-8 py-2 w-[150 cpx] text-center text-white rounded hover:bg-[#205c4d] hover:scale-105 transition "
           onClick={() => {
             setGameState(gameState === "RUNNING" ? "PAUSED" : "RUNNING");
           }}
@@ -46,7 +48,7 @@ function Game() {
         </button>
       )}
 
-      <div>Score : {(snakeBody.length - 1)*10}</div>
+      <div className="game-font">Score : {(snakeBody.length - 1) * 10}</div>
     </div>
   );
 }

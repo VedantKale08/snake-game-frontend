@@ -5,7 +5,7 @@ import createSnakeMovement, { hasSnakeEatenHimself, willSnakeHitTheFood } from "
 
 const { useState, useEffect } = require("react");
 
-const MOVEMENT_SPEED = 100;
+const MOVEMENT_SPEED = 150;
 
 const useGameLogic = ({ canvasWidth, canvasHeight, gameState, onGameOver }) => {
   const [direction, setDirection] = useState();
@@ -48,7 +48,8 @@ const useGameLogic = ({ canvasWidth, canvasHeight, gameState, onGameOver }) => {
   }
 
   const snakeHeadPosition = snakeBody[snakeBody.length - 1];
-  const { moveDown, moveLeft, moveRight, moveUp } = createSnakeMovement();
+  const { moveDown, moveLeft, moveRight, moveUp } =
+    createSnakeMovement(SEGMENT_SIZE);
 
   useEffect(() => {
     if (!canvasHeight || !canvasWidth) return;

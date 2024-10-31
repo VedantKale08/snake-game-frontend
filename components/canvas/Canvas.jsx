@@ -22,7 +22,7 @@ const Canvas = forwardRef(({ draw, ...props }, canvasRef) => {
           width={300}
           height={150}
           ref={canvasRef}
-          className="border-[10px] w-[800px] h-[400px]"
+          className="border-[10px] w-[1000px] h-[500px]"
           {...props}
         ></canvas>
       );

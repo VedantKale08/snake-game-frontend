@@ -8,11 +8,13 @@ const Canvas = forwardRef(({ draw, ...props }, canvasRef) => {
         if (!canvasRef) return;
         const canvas = canvasRef.current;
         if(!canvas) return;
+
+        
         
         const context = canvas.getContext("2d");
         if(!context) return;
 
-        context.fillStyle = "#90D26D";
+        context.fillStyle = "#90D26D";        
         context.fillRect(0, 0, canvas.width, canvas.height);
 
           const gridSize = 10;

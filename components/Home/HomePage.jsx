@@ -108,7 +108,7 @@ function HomePage() {
         {[
           { title: "Single Player", link: "/game" },
           { title: "Computer", link: "" },
-          { title: "MultiPlayer", link: "" },
+          { title: "MultiPlayer", link: "/multi-player" },
           { title: "Options", link: "" },
           { title: "Exit", link: "" },
         ].map((item, index) => (

@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import Canvas from "../canvas/Canvas";
 import useGameLogic from "./useGameLogic";
 import draw from "../draw/draw";
+import GameOver from "../GameOver/GameOver";
 
 function Game() {
   const canvasRef = useRef(null);
@@ -49,6 +50,7 @@ function Game() {
       )}
 
       <div className="game-font">Score : {(snakeBody.length - 1) * 10}</div>
+      {gameState === "GAME OVER" && <GameOver score={(snakeBody.length - 1)}/>}
     </div>
   );
 }
